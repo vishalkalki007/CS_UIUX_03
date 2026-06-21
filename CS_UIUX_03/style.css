@@ -1,0 +1,412 @@
+/* Styling Global Properties */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background: #cadde0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Smartphone Display Enclosure Frame Wrapper */
+.phone-wrapper {
+    background: #ffffff;
+    width: 365px;
+    height: 680px;
+    border-radius: 38px;
+    box-shadow: 0 25px 60px rgba(4, 50, 47, 0.15);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #ffffff;
+}
+
+/* Screen Panel System Switch states */
+.app-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Header UI Elements */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px 15px 20px;
+}
+
+.brand-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111b1a;
+}
+
+.cart-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    background-color: #047670;
+    color: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+/* Search Bar Component Module */
+.search-box {
+    margin: 0 20px 20px 20px;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9caab0;
+    font-size: 14px;
+}
+
+#menuSearch {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    background-color: #f4f7f8;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    font-size: 13px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+#menuSearch:focus {
+    background-color: #ffffff;
+    border-color: #047670;
+}
+
+/* Categories Row (Horizontal Slider Layout Container) */
+.categories-row {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 20px 20px;
+    overflow-x: auto;
+    background: linear-gradient(to bottom, #ffffff 70%, #e1eff0 70%);
+}
+
+.categories-row::-webkit-scrollbar {
+    display: none; /* Hides raw desktop standard scroll bars natively */
+}
+
+.category-pill {
+    background: transparent;
+    border: none;
+    color: #6a7c80;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.category-pill.active {
+    background-color: #047670;
+    color: #ffffff;
+}
+
+/* Scrollable Main Menu Window Panel Container */
+.menu-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #e1eff0;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.menu-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding-bottom: 20px;
+}
+
+/* Card Elements (Visually Appealing Grid) */
+.menu-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(4, 50, 47, 0.03);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menu-card:hover {
+    transform: translateY(-3px);
+}
+
+.card-img-frame {
+    width: 100%;
+    height: 100px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.card-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111b1a;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #788a8c;
+    margin-bottom: 8px;
+}
+
+.card-meta .time { color: #047670; font-weight: 500; }
+.card-meta .rating { color: #ff9f43; font-weight: 600; }
+.card-meta i { margin-right: 2px; }
+
+.card-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111b1a;
+}
+
+/* PRODUCT DETAIL COVER STYLING VIEWS */
+.detail-hero {
+    height: 250px;
+    position: relative;
+    background-color: #f4f7f8;
+}
+
+.detail-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.back-circle-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111b1a;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.detail-cart-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    background: #047670;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.detail-content {
+    flex: 1;
+    background: #ffffff;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -25px;
+    position: relative;
+    padding: 30px 20px 20px 20px;
+    overflow-y: auto;
+}
+
+.detail-content::-webkit-scrollbar { display: none; }
+
+.detail-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+#detailTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111b1a;
+}
+
+.ratings-info {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+.detail-prep-time { color: #047670; }
+.detail-rating { color: #ff9f43; }
+
+.detail-price-tag {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111b1a;
+    margin-bottom: 15px;
+}
+
+.detail-description-text {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #6a7c80;
+    margin-bottom: 25px;
+}
+
+.section-subheading {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111b1a;
+    margin-bottom: 12px;
+}
+
+/* Recommendations Row Carousel Elements */
+.recently-viewed-row {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+.recently-viewed-row::-webkit-scrollbar { display: none; }
+
+.recent-mini-thumb {
+    width: 75px;
+    height: 75px;
+    border-radius: 14px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #f4f7f8;
+}
+
+/* Detail Screen Dynamic Stick Action Footer Bar */
+.detail-footer {
+    padding: 15px 20px;
+    background: #ffffff;
+    border-top: 1px solid #f4f7f8;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.favorite-toggle-btn {
+    width: 50px;
+    height: 50px;
+    background: #f4f7f8;
+    border: none;
+    border-radius: 14px;
+    color: #047670;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn {
+    flex: 1;
+    background: #047670;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(4, 118, 112, 0.2);
+}
+
+/* HARDWARE FIXED BOTTOM APPARATUS NAV SYSTEM INTERFACE BAR */
+.bottom-system-nav {
+    height: 60px;
+    background-color: #ffffff;
+    border-top: 1px solid #f0f4f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5px;
+    z-index: 10;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #9caab0;
+    text-decoration: none;
+    font-size: 16px;
+    gap: 4px;
+}
+
+.nav-item span {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.nav-item.active {
+    color: #047670;
+}

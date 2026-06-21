@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Restaurant Menu App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="phone-wrapper">
+        
+        <div id="menuDashboard" class="app-screen">
+            <header class="app-header">
+                <h1 class="brand-title">Menu</h1>
+                <div class="cart-icon-wrapper" onclick="openCartHint()">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span id="cartCount" class="cart-badge">0</span>
+                </div>
+            </header>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="menuSearch" placeholder="Search delicious food..." oninput="handleSearch()">
+            </div>
+
+            <div class="categories-row">
+                <button class="category-pill active" onclick="filterCategory('all', this)">All</button>
+                <button class="category-pill" onclick="filterCategory('breakfast', this)">Breakfast</button>
+                <button class="category-pill" onclick="filterCategory('lunch', this)">Lunch</button>
+                <button class="category-pill" onclick="filterCategory('treats', this)">Treats</button>
+                <button class="category-pill" onclick="filterCategory('dessert', this)">Dessert</button>
+            </div>
+
+            <main class="menu-scroll-container">
+                <div class="menu-grid" id="menuGridContainer">
+                    </div>
+            </main>
+        </div>
+
+        <div id="productDetailsScreen" class="app-screen hidden">
+            <div class="detail-hero">
+                <button class="back-circle-btn" onclick="closeDetails()"><i class="fa-solid fa-chevron-left"></i></button>
+                <img id="detailImg" src="" alt="Food Preview">
+                <div class="detail-cart-toggle">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+            </div>
+            
+            <div class="detail-content">
+                <div class="detail-meta-row">
+                    <h2 id="detailTitle">Food Item</h2>
+                    <div class="ratings-info">
+                        <span class="detail-prep-time"><i class="fa-regular fa-clock"></i> <span id="detailTime">0</span> min</span>
+                        <span class="detail-rating"><i class="fa-solid fa-star"></i> <span id="detailRating">0.0</span></span>
+                    </div>
+                </div>
+
+                <div id="detailPrice" class="detail-price-tag">0.00$</div>
+                
+                <p id="detailDesc" class="detail-description-text">Food item full summary context profile description goes here.</p>
+                
+                <h3 class="section-subheading">Recently Viewed</h3>
+                <div class="recently-viewed-row" id="recentContainer">
+                    </div>
+            </div>
+
+            <footer class="detail-footer">
+                <button class="favorite-toggle-btn"><i class="fa-regular fa-heart"></i></button>
+                <button class="add-to-cart-btn" onclick="addItemToCart()">Add to cart</button>
+            </footer>
+        </div>
+
+        <nav class="bottom-system-nav">
+            <a href="#" class="nav-item active" onclick="closeDetails()"><i class="fa-solid fa-compass"></i><span>Menu</span></a>
+            <a href="#" class="nav-item" onclick="openCartHint()"><i class="fa-regular fa-heart"></i><span>Saved</span></a>
+            <a href="#" class="nav-item" onclick="openCartHint()"><i class="fa-regular fa-file-lines"></i><span>Orders</span></a>
+            <a href="#" class="nav-item" onclick="openCartHint()"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+        </nav>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
